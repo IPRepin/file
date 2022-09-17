@@ -1,16 +1,25 @@
-# This is a sample Python script.
+file_data_txt = open('data.txt', encoding='utf8')# открытие файла
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+read_data_txt = file_data_txt.read() #чтение файла
+# print(read_data_txt)
+
+file_data_txt.close() #закрытие файла
+
+# ускоряем работу с файлами припомощи контентного менеджера with
+with open('data.txt', encoding='utf8') as file_data_txt: #with после прочтения файла сам его закрывает
+    read_data_txt = file_data_txt.read()
+    # print(read_data_txt)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# методы чтения файла
+with open('data.txt', encoding='utf8') as file_data_txt: #read считывает весь файл целиком (class str)
+    read_data_txt = file_data_txt.read()
+    print(read_data_txt)
 
+with open('data.txt', 'r', encoding='utf8') as file_data_txt: #'r' явно указываем режим чтения
+    read_data_txt = file_data_txt.readline() #readline считывет за раз только одну строку (class str)
+    print(read_data_txt)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+with open('data.txt', encoding='utf8') as file_data_txt:
+    read_data_txt = file_data_txt.readlines() #readlines считывет весь файл, но посторочно помещаяя каждую строку в список (class list)
+    print(read_data_txt)
