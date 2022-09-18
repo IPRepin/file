@@ -1,0 +1,7 @@
+Hello world!
+Привет мир!
+Дозаписанная строка
+Name: res
+Age: y
+Work: hrt
+Cours: nf
