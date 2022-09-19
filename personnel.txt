@@ -1,6 +1,13 @@
+
 Название отдела: IT
-Колличество сотрудников: 2
-Pavel Repin
-Возраст: 40 лет, | Специальность: dev python
-Diana Repina
-Возраст: 15 лет, | Специальность: dev JavaScript
+3
+Ivan Ivanov
+Возраст: 25 лет | Специальность: dev python
+Sidor Sidorov
+Возраст: 36 лет | Специальность: dev JavaScript
+Petr Petrov
+Возраст: 40 лет | Специальность: dev HTML
+Название отдела: HR
+1
+Mike Vasovski
+Возраст: 25 лет | Специальность: hr manager
