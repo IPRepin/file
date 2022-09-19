@@ -4,6 +4,7 @@ def repeat():
         if repeat_inn == 'y':
             def name_department():
                 with open('personnel.txt', 'a') as department:
+                    department.seek(0)
                     dep = department.write(f'Название отдела: {input("Ведите название отдела: ")}\n')
                     return dep
 
@@ -38,7 +39,7 @@ def read_personel_txt():
     depatments = []
     with open('personnel.txt', 'rt') as emloyees_list:
         for line in emloyees_list:
-            depatment_name = line
+            depatment_name = line.strip()
             depatment = {"name": depatment_name, "employees": []}
             emloyees_count = emloyees_list.readline()
             for i in range(int(emloyees_count)):
