@@ -14,9 +14,27 @@ def read_cook_book():
             reading_cook_book.readline()
         print(cook_book)
 
+
 cook_book = {}
 read_cook_book()
 
-# def get_shop_list_by_dishes(dishes, person_count):
-#     person_count = int(input('Ведите количество персон'))
-#     for dishes in getcook_book:
+
+def get_shop_list_by_dishes(dishes, person_count):
+    ingridients_dict = {}
+    for dish in dishes:
+        if dish in cook_book:
+            for ingridients in cook_book[dish]:
+                quantity_dict = {}
+                if ingridients['ingredient_name'] not in ingridients_dict:
+                    quantity_dict['measure'] = ingridients['measure']
+                    quantity_dict['quantity'] = int(ingridients['quantity']) * person_count
+                    ingridients_dict[ingridients['ingredient_name']] = quantity_dict
+                else:
+                    ingridients_dict[ingridients['ingredient_name']]['quantity'] = \
+                    ingridients_dict[ingridients['ingredient_name']]['quantity'] + \
+                    int(ingridients['quantity']) * person_count
+        else:
+            print('Такого блюда нет!')
+    return print(ingridients_dict)
+
+get_shop_list_by_dishes(['Утка по-пекински', "Омлет"], 3)
